@@ -10,11 +10,13 @@ VigenerCipher::VigenerCipher(string key)
 
 void VigenerCipher::setKey(string value)
 {
+    keyIndex = 0;
     key = "";
     for (char i : value)
         if ('a' <= i && i <= 'z' || 'A' <= i && i <= 'Z')
             key += tolower(i);
-    keyIndex = 0;
+    if (key == "")
+        key = "a";
 }
 
 char VigenerCipher::getDecodingChar(char value)
@@ -28,8 +30,6 @@ char VigenerCipher::getDecodingChar(char value)
 
 string VigenerCipher::decode(string value)
 {
-    if (key == "")
-        key = "a";
     string result;
     for (int i = 0; i < value.length(); i++)
         result += getDecodingChar(value[i]);

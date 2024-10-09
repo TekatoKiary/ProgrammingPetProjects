@@ -34,6 +34,7 @@ int binareSearch(int array[], int length, int findNumber)
         else
             return middle + 1;
     }
+    return -1;
 }
 
 int recurse(int array[], int left, int right, int findNumber)
@@ -59,6 +60,6 @@ int main() {
     int findNumber;
     cout << endl << "Введите искомое число: ";
     cin >> findNumber;
-    cout << endl << recurse(array, 0, length - 1, findNumber); // Вариант с рекурскией
-    //cout << endl << binareSearch(array, length, findNumber); // Вариант через цикл while
+    //cout << endl << recurse(array, 0, length - 1, findNumber); // Вариант с рекурскией
+    cout << endl << binareSearch(array, length, findNumber); // Вариант через цикл while
 }
